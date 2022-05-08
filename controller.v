@@ -3,6 +3,7 @@ module controller (
 	input rst,
 	output valid_pixel,
 	output valid_digit,
+	output reg check_max,
 	output reg [11:0] pixel_addr,
 	output reg [3:0] bias_addr,
 	output reg [11:0] bias_load,
@@ -20,6 +21,7 @@ always @(posedge clk or posedge rst) begin
 	layer1_addr_delay <= layer1_addr;
 
 	if (rst) begin
+		check_max <= 1'b0;
 		state <= 4'b0;
 		valid <= 2'b0;
 		valid_layer2 <= 2'b0;
@@ -83,6 +85,10 @@ always @(posedge clk or posedge rst) begin
 						state <= 4'd4;
 						valid_layer2 <= 1'b0;
 					end
+			end
+			
+			4: begin
+					check_max <= 1'b1;		
 			end
 			
 			
