@@ -69,6 +69,7 @@ def ff(n):
 def test_build_model(first_layer_biases, first_layer_weights, second_layer_biases, second_layer_weights):
     org_stdout = sys.stdout 
     sys.stdout = open('neuron_layer1_confirmation.txt','w')
+    print('Layer 1')
 
     (x_train, y_train),(x_test, y_test) = mnist.load_data() # loads mnist data
 
@@ -89,7 +90,6 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
         layer1[neuron] = ff(first_layer_biases[neuron])
 
     # loops over each pixel
-    # FIRST CHANGE UNDO TO PAST HERE
     for i in range(10):
         print(f"Bias neuron{i}:             0x"+hex(float_to_fixed(layer1[i]))[2:].zfill(8))
     print('')
@@ -117,19 +117,38 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
     print('')
 
     sys.stdout.close()
-    sys.stdout = org_stdout
+    sys.stdout = open('neuron_layer2_confirmation.txt','w')
+    print('Layer 2')
 
     layer2 = [0.0] * 10 # creates a list with 10 entries initialized to 0.0
     # loops over each neuron in second layer to add bias value
     for neuron in range(10): 
         layer2[neuron] = ff(second_layer_biases[neuron])
 
+    for i in range(10):
+        print(f"Bias neuron{i}: 0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8))
+    print('')
+
     # loops over each pixel
     for neuron_layer1 in range(10):
         for neuron_layer2 in range(10): 
             layer2[neuron_layer2] = ff(layer2[neuron_layer2] + ff(ff(layer1[neuron_layer1]) * ff(second_layer_weights[neuron_layer1][neuron_layer2])))
 
+        print(neuron_layer1)
+        for i in range(10):
+            print(f"Sums neuron{i}: 0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8)+ ". Value: 0x"+hex(float_to_fixed(layer1[neuron_layer1]))[2:].zfill(8) + ". Weight: 0x"+hex(float_to_fixed(second_layer_weights[neuron_layer1][i]))[2:].zfill(8))
+
+        print('')
+
     m = max(layer2) # applies soft max
+
+    print('Final')
+    for i in range(10):
+        print(f"Neuron{i}:  0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8))
+    print('')
+    sys.stdout.close()
+    sys.stdout = org_stdout
+
     print(m, layer2.index(m), y_test[testimg])
     if (layer2.index(m) == y_test[testimg]):
         correct += 1

@@ -1,3 +1,4 @@
+Layer 1
 Bias neuron0:             0x00000306
 Bias neuron1:             0x000021d2
 Bias neuron2:             0x00002061
