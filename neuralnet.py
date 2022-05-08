@@ -89,17 +89,24 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
         layer1[neuron] = ff(first_layer_biases[neuron])
 
     # loops over each pixel
+    # FIRST CHANGE UNDO TO PAST HERE
     for i in range(10):
         print(f"Bias neuron{i}:             0x"+hex(float_to_fixed(layer1[i]))[2:].zfill(8))
     print('')
-    
+
     for pixel in range(img_width*img_height):
         for neuron in range(10): 
             layer1[neuron] = ff(layer1[neuron] + ff(ff(x_test[testimg][pixel]) * ff(first_layer_weights[pixel][neuron])))
 
-    for i in range(10):
-        print(f"Sums neuron{i}, pixel-783:  0x"+hex(float_to_fixed(layer1[i]))[2:].zfill(8))
-    print('')
+        print(pixel)
+        for i in range(10):
+            print(f"Sums neuron{i}:  0x"+hex(float_to_fixed(layer1[i]))[2:].zfill(8)+ ". Value: 0x"+hex(float_to_fixed(x_test[testimg][pixel]))[2:].zfill(8) + ". Weight: 0x"+hex(float_to_fixed(first_layer_weights[pixel][i]))[2:].zfill(8))
+
+        print('')
+
+    # for i in range(10):
+    #     print(f"Sums neuron{i}, pixel-783:  0x"+hex(float_to_fixed(layer1[i]))[2:].zfill(8))
+    # print('')
 
     # applies ReLU
     for neuron in range(10):
