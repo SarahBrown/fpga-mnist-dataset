@@ -20,6 +20,7 @@ wire [11:0] pixel_addr;
 wire [11:0] bias_load;
 wire [3:0] bias_addr;
 wire [3:0] neuron1_addr;
+wire [3:0] neuron1_addr_delay;
 
 wire signed [31:0] pixel_value;
 wire signed [31:0] bias1_value;
@@ -54,7 +55,7 @@ wire signed [31:0] layer2_databus;
 
 assign rst = ~KEY[0] | ~KEY[1];
 assign layer1_databus = (|bias_load) ? bias1_value : pixel_value;
-assign layer2_databus = (|bias_load) ? bias2_value : relu_value[neuron1_addr];
+assign layer2_databus = (|bias_load) ? bias2_value : relu_value[neuron1_addr_delay];
 
 controller 		ctrl(	.clk(MAX10_CLK1_50),
 							.rst(rst),
@@ -63,7 +64,8 @@ controller 		ctrl(	.clk(MAX10_CLK1_50),
 							.pixel_addr(pixel_addr),
 							.bias_addr(bias_addr),
 							.bias_load(bias_load),
-							.layer1_addr(neuron1_addr));
+							.layer1_addr(neuron1_addr),
+							.layer1_addr_delay(neuron1_addr_delay));
 
 test_mem			t0(.clk(MAX10_CLK1_50),
 						.addr(pixel_addr),
