@@ -152,9 +152,9 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     mem_template('test0.mif', 'test0.txt', x_test[0], img_height*img_width) 
     for neuron in range(10):
         mem_template(f'weight_layer1_neuron{neuron}.mif', f'weight_layer1_neuron{neuron}.txt',  first_layer_weights[neuron], 784) # first layer weights
-        mem_template(f'weight_layer2_neuron{neuron}.mif', f'weight_layer2_neuron{neuron}.txt', second_layer_weights[neuron], 10) # first layer weights
+        mem_template(f'weight_layer2_neuron{neuron}.mif', f'weight_layer2_neuron{neuron}.txt', second_layer_weights[neuron], 10) # second layer weights
     
-    mem_template('bias_layer1.mif', 'bias_layer1.txt', first_layer_biases, 10) # second bias values
+    mem_template('bias_layer1.mif', 'bias_layer1.txt', first_layer_biases, 10) # first bias values
     mem_template('bias_layer2.mif', 'bias_layer2.txt', second_layer_biases, 10) # second bias values
 
 def main():
