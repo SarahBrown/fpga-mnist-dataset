@@ -1,0 +1,33 @@
+Bias neuron0:             0x00000306
+Bias neuron1:             0x000021d2
+Bias neuron2:             0x00002061
+Bias neuron3:             0xffffe221
+Bias neuron4:             0x0000090f
+Bias neuron5:             0x00001448
+Bias neuron6:             0xfffffe09
+Bias neuron7:             0x00000874
+Bias neuron8:             0xfffff274
+Bias neuron9:             0x00000afd
+
+Sums neuron0, pixel-783:  0x00083e86
+Sums neuron1, pixel-783:  0x000c455d
+Sums neuron2, pixel-783:  0xfff9979c
+Sums neuron3, pixel-783:  0x0006defc
+Sums neuron4, pixel-783:  0xfffe34ce
+Sums neuron5, pixel-783:  0xfff4af9d
+Sums neuron6, pixel-783:  0xfffc55bc
+Sums neuron7, pixel-783:  0x00069470
+Sums neuron8, pixel-783:  0x00058ebd
+Sums neuron9, pixel-783:  0xfffce442
+
+ReLU neuron0, pixel-783:  0x00083e86
+ReLU neuron1, pixel-783:  0x000c455d
+ReLU neuron2, pixel-783:  0x00000000
+ReLU neuron3, pixel-783:  0x0006defc
+ReLU neuron4, pixel-783:  0x00000000
+ReLU neuron5, pixel-783:  0x00000000
+ReLU neuron6, pixel-783:  0x00000000
+ReLU neuron7, pixel-783:  0x00069470
+ReLU neuron8, pixel-783:  0x00058ebd
+ReLU neuron9, pixel-783:  0x00000000
+
