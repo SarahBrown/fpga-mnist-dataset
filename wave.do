@@ -31,7 +31,7 @@ add wave -noupdate -radix hexadecimal /top_tb/topTest/n3/weight
 add wave -noupdate -radix hexadecimal /top_tb/topTest/n3/sum
 add wave -noupdate -radix hexadecimal /top_tb/topTest/n3/relu_output
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+WaveRestoreCursors {{Cursor 1} {7964017 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 222
 configure wave -valuecolwidth 47
@@ -47,4 +47,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {159411 ps}
+WaveRestoreZoom {7718392 ps} {7879635 ps}
