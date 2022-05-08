@@ -146,7 +146,7 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/32
 
     mem_template('test0.mif', 'test0.txt', x_test[0], img_height*img_width)
-
+    
     for neuron in range(10):
         mem_template(f'weight_layer1_neuron{neuron}.mif', f'weight_layer1_neuron{neuron}.txt',  first_layer_weights[neuron], 784) # first layer weights
         mem_template(f'weight_layer2_neuron{neuron}.mif', f'weight_layer2_neuron{neuron}.txt', second_layer_weights[neuron], 10) # first layer weights

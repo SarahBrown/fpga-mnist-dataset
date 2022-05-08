@@ -7,6 +7,7 @@ add wave -noupdate -radix hexadecimal /top_tb/topTest/ctrl/bias_addr
 add wave -noupdate -radix binary /top_tb/topTest/ctrl/bias_load
 add wave -noupdate -label {pixel addr} -radix hexadecimal /top_tb/topTest/ctrl/pixel_addr
 add wave -noupdate -label {bias mem} -radix hexadecimal /top_tb/topTest/b1/output_value
+add wave -noupdate -label {test mem} -radix hexadecimal -radixshowbase 0 /top_tb/topTest/t0/output_value
 add wave -noupdate -divider {neuron ctrl}
 add wave -noupdate -radix hexadecimal /top_tb/topTest/n0/valid
 add wave -noupdate -radix hexadecimal /top_tb/topTest/n0/valid2
@@ -46,4 +47,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {122398 ps}
+WaveRestoreZoom {0 ps} {159411 ps}

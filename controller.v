@@ -30,6 +30,7 @@ always @(posedge clk or posedge rst) begin
 				else begin
 					state <= 4'd1;
 					valid <= 2'b01;
+					bias_load <= 12'b0;
 				end
 			end
 			
