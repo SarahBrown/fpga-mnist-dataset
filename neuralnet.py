@@ -72,7 +72,7 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
     img_width = x_train.shape[1]
     img_height = x_train.shape[2]
 
-    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/255
+    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/32
 
     correct = 0
     incorrect = 0
@@ -155,7 +155,7 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     mem_template('bias_layer2.mif', 'bias_layer2.txt', second_layer_biases, 10) # second bias values
 
 def main():
-    #model = train_model(100, 20)
+    # model = train_model(100, 20)
     model = load_model('trained_model.h5')
 
     model.summary()
