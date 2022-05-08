@@ -134,7 +134,7 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
         for neuron_layer1 in range(10): 
             layer2[neuron_layer2] = ff(layer2[neuron_layer2] + ff(ff(layer1[neuron_layer1]) * ff(second_layer_weights[neuron_layer1][neuron_layer2])))
             print(f"N{10+neuron_layer2}. Value: 0x"+hex(float_to_fixed(layer1[neuron_layer1]))[2:].zfill(8) + ". Weight: 0x"+hex(float_to_fixed(second_layer_weights[neuron_layer1][neuron_layer2]))[2:].zfill(8))
-            #print(f"Sums neuron{i}: 0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8))
+            print(f"Sums neuron: 0x"+hex(float_to_fixed(layer2[neuron_layer2]))[2:].zfill(8))
 
         print('')
 
