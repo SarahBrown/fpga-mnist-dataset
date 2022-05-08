@@ -14,8 +14,8 @@ def train_model(batch_size, epochs):
     img_width = x_train.shape[1]
     img_height = x_train.shape[2]
     
-    x_train = x_train.reshape(num_of_trainImgs, img_height*img_width)/255
-    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/255
+    x_train = x_train.reshape(num_of_trainImgs, img_height*img_width)/32
+    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/32
 
     y_train = np_utils.to_categorical(y_train, 10)     
     y_test = np_utils.to_categorical(y_test, 10)
@@ -78,7 +78,7 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
     incorrect = 0
 
     # iterates over each image
-    for testimg in range(len(x_test)):
+    for testimg in range(1): #len(x_test)):
         layer1 = [0.0] * 10 # creates a list with 10 entries initialized to 0.0
         # loops over each neuron in first layer to add bias value
         for neuron in range(10): 
@@ -124,7 +124,7 @@ def mem_template(filename_mif, filename_txt, data, depth):
     print('BEGIN')
 
     for n in range(depth):
-        print(hex(n)[2:].zfill(4)+' : '+bin(float_to_fixed(data[n]))[2:].zfill(32)+';')
+        print(hex(n)[2:].zfill(4)+' : '+bin(float_to_fixed(data[n]))[2:].zfill(32)+';  % 0x'+hex(float_to_fixed(data[n]))[2:].zfill(8) +'  '+ str(data[n])+' %')
 
     print('END;')
     sys.stdout.close()
@@ -143,9 +143,9 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     img_width = x_train.shape[1]
     img_height = x_train.shape[2]
 
-    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/255
+    x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/32
 
-    mem_template('test0.mif', 'test0.txt', y_test[0], img_height*img_width)
+    mem_template('test0.mif', 'test0.txt', x_test[0], img_height*img_width)
 
     for neuron in range(10):
         mem_template(f'weight_layer1_neuron{neuron}.mif', f'weight_layer1_neuron{neuron}.txt',  first_layer_weights[neuron], 10) # first layer weights
@@ -155,7 +155,7 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     mem_template('bias_layer2.mif', 'bias_layer2.txt', second_layer_biases, 10) # second bias values
 
 def main():
-    model = train_model(100, 20)
+    #model = train_model(100, 20)
     model = load_model('trained_model.h5')
 
     model.summary()
