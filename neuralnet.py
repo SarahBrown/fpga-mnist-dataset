@@ -130,13 +130,11 @@ def test_build_model(first_layer_biases, first_layer_weights, second_layer_biase
     print('')
 
     # loops over each pixel
-    for neuron_layer1 in range(10):
-        for neuron_layer2 in range(10): 
+    for neuron_layer2 in range(10):
+        for neuron_layer1 in range(10): 
             layer2[neuron_layer2] = ff(layer2[neuron_layer2] + ff(ff(layer1[neuron_layer1]) * ff(second_layer_weights[neuron_layer1][neuron_layer2])))
-
-        print(neuron_layer1)
-        for i in range(10):
-            print(f"Sums neuron{i}: 0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8)+ ". Value: 0x"+hex(float_to_fixed(layer1[neuron_layer1]))[2:].zfill(8) + ". Weight: 0x"+hex(float_to_fixed(second_layer_weights[neuron_layer1][i]))[2:].zfill(8))
+            print(f"N{10+neuron_layer2}. Value: 0x"+hex(float_to_fixed(layer1[neuron_layer1]))[2:].zfill(8) + ". Weight: 0x"+hex(float_to_fixed(second_layer_weights[neuron_layer1][neuron_layer2]))[2:].zfill(8))
+            #print(f"Sums neuron{i}: 0x"+hex(float_to_fixed(layer2[i]))[2:].zfill(8))
 
         print('')
 
@@ -191,7 +189,7 @@ def build_FPGA_memfiles(first_layer_biases, first_layer_weights, second_layer_bi
     x_test = x_test.reshape(num_of_testImgs, img_height*img_width)/32
 
     first_layer_weights = np.asarray(first_layer_weights).transpose().tolist()
-    # second_layer_weights = np.asarray(second_layer_weights).transpose().tolist()
+    second_layer_weights = np.asarray(second_layer_weights).transpose().tolist()
 
     mem_template('test0.mif', 'test0.txt', x_test[0], img_height*img_width) 
     for neuron in range(10):

@@ -10,125 +10,115 @@ Bias neuron7: 0xfffffe56
 Bias neuron8: 0x00000413
 Bias neuron9: 0x00002834
 
-0
-Sums neuron0: 0x0000a4b8. Value: 0x00083e86. Weight: 0x00001198
-Sums neuron1: 0xfffe84ab. Value: 0x00083e86. Weight: 0xffffd30f
-Sums neuron2: 0x00051535. Value: 0x00083e86. Weight: 0x00009edf
-Sums neuron3: 0x00015335. Value: 0x00083e86. Weight: 0x00003319
-Sums neuron4: 0xfffb89b9. Value: 0x00083e86. Weight: 0xffff7d87
-Sums neuron5: 0xffffaea0. Value: 0x00083e86. Weight: 0xffffec75
-Sums neuron6: 0xfffef8c1. Value: 0x00083e86. Weight: 0xffffdd27
-Sums neuron7: 0x00033890. Value: 0x00083e86. Weight: 0x00006438
-Sums neuron8: 0xfffc8e0b. Value: 0x00083e86. Weight: 0xffff9487
-Sums neuron9: 0xfffb7bf4. Value: 0x00083e86. Weight: 0xffff6ee6
+N10. Value: 0x00083e86. Weight: 0x00001198
+N10. Value: 0x000c455d. Weight: 0xfffff4c2
+N10. Value: 0x00000000. Weight: 0xffff8778
+N10. Value: 0x0006defc. Weight: 0x00001e30
+N10. Value: 0x00000000. Weight: 0x0000be0f
+N10. Value: 0x00000000. Weight: 0xffffb6da
+N10. Value: 0x00000000. Weight: 0x000021fa
+N10. Value: 0x00069470. Weight: 0xffffb1cf
+N10. Value: 0x00058ebd. Weight: 0xffffcbc6
+N10. Value: 0x00000000. Weight: 0xffffc35c
 
-1
-Sums neuron0: 0x00001ac4. Value: 0x000c455d. Weight: 0xfffff4c2
-Sums neuron1: 0xfff7e9f6. Value: 0x000c455d. Weight: 0xffff7638
-Sums neuron2: 0x00038e80. Value: 0x000c455d. Weight: 0xffffe029
-Sums neuron3: 0x0001ef3b. Value: 0x000c455d. Weight: 0x00000cb7
-Sums neuron4: 0xfffc8827. Value: 0x000c455d. Weight: 0x000014bc
-Sums neuron5: 0xffff96a9. Value: 0x000c455d. Weight: 0xfffffe0c
-Sums neuron6: 0xfff7f96f. Value: 0x000c455d. Weight: 0xffff6e05
-Sums neuron7: 0x000aeff2. Value: 0x000c455d. Weight: 0x0000a0fb
-Sums neuron8: 0xfff7c9e6. Value: 0x000c455d. Weight: 0xffff9c91
-Sums neuron9: 0x00028b61. Value: 0x000c455d. Weight: 0x0000934b
+N11. Value: 0x00083e86. Weight: 0xffffd30f
+N11. Value: 0x000c455d. Weight: 0xffff7638
+N11. Value: 0x00000000. Weight: 0xffffb9ba
+N11. Value: 0x0006defc. Weight: 0xffffa6e3
+N11. Value: 0x00000000. Weight: 0xffffcbfc
+N11. Value: 0x00000000. Weight: 0x000001ad
+N11. Value: 0x00000000. Weight: 0xffffed96
+N11. Value: 0x00069470. Weight: 0x00007e71
+N11. Value: 0x00058ebd. Weight: 0x00007b1a
+N11. Value: 0x00000000. Weight: 0x000098ad
 
-2
-Sums neuron0: 0x00001ac4. Value: 0x00000000. Weight: 0xffff8778
-Sums neuron1: 0xfff7e9f6. Value: 0x00000000. Weight: 0xffffb9ba
-Sums neuron2: 0x00038e80. Value: 0x00000000. Weight: 0xffff6c91
-Sums neuron3: 0x0001ef3b. Value: 0x00000000. Weight: 0xffffe068
-Sums neuron4: 0xfffc8827. Value: 0x00000000. Weight: 0xffff5ecf
-Sums neuron5: 0xffff96a9. Value: 0x00000000. Weight: 0x0000b1c3
-Sums neuron6: 0xfff7f96f. Value: 0x00000000. Weight: 0x000038e9
-Sums neuron7: 0x000aeff2. Value: 0x00000000. Weight: 0xffff7e2f
-Sums neuron8: 0xfff7c9e6. Value: 0x00000000. Weight: 0xffff97d6
-Sums neuron9: 0x00028b61. Value: 0x00000000. Weight: 0xffffcf94
+N12. Value: 0x00083e86. Weight: 0x00009edf
+N12. Value: 0x000c455d. Weight: 0xffffe029
+N12. Value: 0x00000000. Weight: 0xffff6c91
+N12. Value: 0x0006defc. Weight: 0x00003d16
+N12. Value: 0x00000000. Weight: 0x000025ed
+N12. Value: 0x00000000. Weight: 0x000042d2
+N12. Value: 0x00000000. Weight: 0x00004d43
+N12. Value: 0x00069470. Weight: 0xffffe237
+N12. Value: 0x00058ebd. Weight: 0xffffe528
+N12. Value: 0x00000000. Weight: 0xffffd0a5
 
-3
-Sums neuron0: 0x0000ea2f. Value: 0x0006defc. Weight: 0x00001e30
-Sums neuron1: 0xfff585a9. Value: 0x0006defc. Weight: 0xffffa6e3
-Sums neuron2: 0x00053239. Value: 0x0006defc. Weight: 0x00003d16
-Sums neuron3: 0x000508f8. Value: 0x0006defc. Weight: 0x00007385
-Sums neuron4: 0xfffb9ec0. Value: 0x0006defc. Weight: 0xffffde08
-Sums neuron5: 0x00030e80. Value: 0x0006defc. Weight: 0x00008137
-Sums neuron6: 0xfff820a6. Value: 0x0006defc. Weight: 0x000005b5
-Sums neuron7: 0x0007c644. Value: 0x0006defc. Weight: 0xffff8a29
-Sums neuron8: 0xfffa7d00. Value: 0x0006defc. Weight: 0x00006495
-Sums neuron9: 0x0003ff98. Value: 0x0006defc. Weight: 0x0000362c
+N13. Value: 0x00083e86. Weight: 0x00003319
+N13. Value: 0x000c455d. Weight: 0x00000cb7
+N13. Value: 0x00000000. Weight: 0xffffe068
+N13. Value: 0x0006defc. Weight: 0x00007385
+N13. Value: 0x00000000. Weight: 0xffffe2ed
+N13. Value: 0x00000000. Weight: 0xffffba57
+N13. Value: 0x00000000. Weight: 0xffffd35d
+N13. Value: 0x00069470. Weight: 0x0000066c
+N13. Value: 0x00058ebd. Weight: 0xfffff28c
+N13. Value: 0x00000000. Weight: 0x00005ce0
 
-4
-Sums neuron0: 0x0000ea2f. Value: 0x00000000. Weight: 0x0000be0f
-Sums neuron1: 0xfff585a9. Value: 0x00000000. Weight: 0xffffcbfc
-Sums neuron2: 0x00053239. Value: 0x00000000. Weight: 0x000025ed
-Sums neuron3: 0x000508f8. Value: 0x00000000. Weight: 0xffffe2ed
-Sums neuron4: 0xfffb9ec0. Value: 0x00000000. Weight: 0x000037df
-Sums neuron5: 0x00030e80. Value: 0x00000000. Weight: 0xffffdb43
-Sums neuron6: 0xfff820a6. Value: 0x00000000. Weight: 0x00002807
-Sums neuron7: 0x0007c644. Value: 0x00000000. Weight: 0x00000a49
-Sums neuron8: 0xfffa7d00. Value: 0x00000000. Weight: 0xffffe6fb
-Sums neuron9: 0x0003ff98. Value: 0x00000000. Weight: 0xffffc3ff
+N14. Value: 0x00083e86. Weight: 0xffff7d87
+N14. Value: 0x000c455d. Weight: 0x000014bc
+N14. Value: 0x00000000. Weight: 0xffff5ecf
+N14. Value: 0x0006defc. Weight: 0xffffde08
+N14. Value: 0x00000000. Weight: 0x000037df
+N14. Value: 0x00000000. Weight: 0x0000306b
+N14. Value: 0x00000000. Weight: 0xffffe244
+N14. Value: 0x00069470. Weight: 0x00008c5f
+N14. Value: 0x00058ebd. Weight: 0x00004030
+N14. Value: 0x00000000. Weight: 0x0000007c
 
-5
-Sums neuron0: 0x0000ea2f. Value: 0x00000000. Weight: 0xffffb6da
-Sums neuron1: 0xfff585a9. Value: 0x00000000. Weight: 0x000001ad
-Sums neuron2: 0x00053239. Value: 0x00000000. Weight: 0x000042d2
-Sums neuron3: 0x000508f8. Value: 0x00000000. Weight: 0xffffba57
-Sums neuron4: 0xfffb9ec0. Value: 0x00000000. Weight: 0x0000306b
-Sums neuron5: 0x00030e80. Value: 0x00000000. Weight: 0xffffd43e
-Sums neuron6: 0xfff820a6. Value: 0x00000000. Weight: 0x0000a537
-Sums neuron7: 0x0007c644. Value: 0x00000000. Weight: 0xffff88d2
-Sums neuron8: 0xfffa7d00. Value: 0x00000000. Weight: 0xffffb24c
-Sums neuron9: 0x0003ff98. Value: 0x00000000. Weight: 0xffffc5fe
+N15. Value: 0x00083e86. Weight: 0xffffec75
+N15. Value: 0x000c455d. Weight: 0xfffffe0c
+N15. Value: 0x00000000. Weight: 0x0000b1c3
+N15. Value: 0x0006defc. Weight: 0x00008137
+N15. Value: 0x00000000. Weight: 0xffffdb43
+N15. Value: 0x00000000. Weight: 0xffffd43e
+N15. Value: 0x00000000. Weight: 0xffff9deb
+N15. Value: 0x00069470. Weight: 0x000030e1
+N15. Value: 0x00058ebd. Weight: 0xffffe54e
+N15. Value: 0x00000000. Weight: 0xffffbd06
 
-6
-Sums neuron0: 0x0000ea2f. Value: 0x00000000. Weight: 0x000021fa
-Sums neuron1: 0xfff585a9. Value: 0x00000000. Weight: 0xffffed96
-Sums neuron2: 0x00053239. Value: 0x00000000. Weight: 0x00004d43
-Sums neuron3: 0x000508f8. Value: 0x00000000. Weight: 0xffffd35d
-Sums neuron4: 0xfffb9ec0. Value: 0x00000000. Weight: 0xffffe244
-Sums neuron5: 0x00030e80. Value: 0x00000000. Weight: 0xffff9deb
-Sums neuron6: 0xfff820a6. Value: 0x00000000. Weight: 0xffff8af7
-Sums neuron7: 0x0007c644. Value: 0x00000000. Weight: 0xfffffea4
-Sums neuron8: 0xfffa7d00. Value: 0x00000000. Weight: 0x00008188
-Sums neuron9: 0x0003ff98. Value: 0x00000000. Weight: 0x000009cc
+N16. Value: 0x00083e86. Weight: 0xffffdd27
+N16. Value: 0x000c455d. Weight: 0xffff6e05
+N16. Value: 0x00000000. Weight: 0x000038e9
+N16. Value: 0x0006defc. Weight: 0x000005b5
+N16. Value: 0x00000000. Weight: 0x00002807
+N16. Value: 0x00000000. Weight: 0x0000a537
+N16. Value: 0x00000000. Weight: 0xffff8af7
+N16. Value: 0x00069470. Weight: 0xffffca51
+N16. Value: 0x00058ebd. Weight: 0xffffd575
+N16. Value: 0x00000000. Weight: 0xffff9aba
 
-7
-Sums neuron0: 0xfffee7b2. Value: 0x00069470. Weight: 0xffffb1cf
-Sums neuron1: 0xfff8c5a0. Value: 0x00069470. Weight: 0x00007e71
-Sums neuron2: 0x00046e3e. Value: 0x00069470. Weight: 0xffffe237
-Sums neuron3: 0x00053339. Value: 0x00069470. Weight: 0x0000066c
-Sums neuron4: 0xffff3a5e. Value: 0x00069470. Weight: 0x00008c5f
-Sums neuron5: 0x0004501d. Value: 0x00069470. Weight: 0x000030e1
-Sums neuron6: 0xfff6bf6b. Value: 0x00069470. Weight: 0xffffca51
-Sums neuron7: 0x000c3c62. Value: 0x00069470. Weight: 0x0000ad94
-Sums neuron8: 0xfffa7cc5. Value: 0x00069470. Weight: 0xfffffff7
-Sums neuron9: 0x000246d2. Value: 0x00069470. Weight: 0xffffbd03
+N17. Value: 0x00083e86. Weight: 0x00006438
+N17. Value: 0x000c455d. Weight: 0x0000a0fb
+N17. Value: 0x00000000. Weight: 0xffff7e2f
+N17. Value: 0x0006defc. Weight: 0xffff8a29
+N17. Value: 0x00000000. Weight: 0x00000a49
+N17. Value: 0x00000000. Weight: 0xffff88d2
+N17. Value: 0x00000000. Weight: 0xfffffea4
+N17. Value: 0x00069470. Weight: 0x0000ad94
+N17. Value: 0x00058ebd. Weight: 0xfffffe84
+N17. Value: 0x00000000. Weight: 0xfffffb9b
 
-8
-Sums neuron0: 0xfffdc571. Value: 0x00058ebd. Weight: 0xffffcbc6
-Sums neuron1: 0xfffb71c5. Value: 0x00058ebd. Weight: 0x00007b1a
-Sums neuron2: 0x0003d90e. Value: 0x00058ebd. Weight: 0xffffe528
-Sums neuron3: 0x0004e875. Value: 0x00058ebd. Weight: 0xfffff28c
-Sums neuron4: 0x00009f18. Value: 0x00058ebd. Weight: 0x00004030
-Sums neuron5: 0x0003bbc1. Value: 0x00058ebd. Weight: 0xffffe54e
-Sums neuron6: 0xfff5d2fb. Value: 0x00058ebd. Weight: 0xffffd575
-Sums neuron7: 0x000c3422. Value: 0x00058ebd. Weight: 0xfffffe84
-Sums neuron8: 0xfffe1554. Value: 0x00058ebd. Weight: 0x0000a5a4
-Sums neuron9: 0x00026b3a. Value: 0x00058ebd. Weight: 0x0000068d
+N18. Value: 0x00083e86. Weight: 0xffff9487
+N18. Value: 0x000c455d. Weight: 0xffff9c91
+N18. Value: 0x00000000. Weight: 0xffff97d6
+N18. Value: 0x0006defc. Weight: 0x00006495
+N18. Value: 0x00000000. Weight: 0xffffe6fb
+N18. Value: 0x00000000. Weight: 0xffffb24c
+N18. Value: 0x00000000. Weight: 0x00008188
+N18. Value: 0x00069470. Weight: 0xfffffff7
+N18. Value: 0x00058ebd. Weight: 0x0000a5a4
+N18. Value: 0x00000000. Weight: 0xffffaa53
 
-9
-Sums neuron0: 0xfffdc571. Value: 0x00000000. Weight: 0xffffc35c
-Sums neuron1: 0xfffb71c5. Value: 0x00000000. Weight: 0x000098ad
-Sums neuron2: 0x0003d90e. Value: 0x00000000. Weight: 0xffffd0a5
-Sums neuron3: 0x0004e875. Value: 0x00000000. Weight: 0x00005ce0
-Sums neuron4: 0x00009f18. Value: 0x00000000. Weight: 0x0000007c
-Sums neuron5: 0x0003bbc1. Value: 0x00000000. Weight: 0xffffbd06
-Sums neuron6: 0xfff5d2fb. Value: 0x00000000. Weight: 0xffff9aba
-Sums neuron7: 0x000c3422. Value: 0x00000000. Weight: 0xfffffb9b
-Sums neuron8: 0xfffe1554. Value: 0x00000000. Weight: 0xffffaa53
-Sums neuron9: 0x00026b3a. Value: 0x00000000. Weight: 0xffffc378
+N19. Value: 0x00083e86. Weight: 0xffff6ee6
+N19. Value: 0x000c455d. Weight: 0x0000934b
+N19. Value: 0x00000000. Weight: 0xffffcf94
+N19. Value: 0x0006defc. Weight: 0x0000362c
+N19. Value: 0x00000000. Weight: 0xffffc3ff
+N19. Value: 0x00000000. Weight: 0xffffc5fe
+N19. Value: 0x00000000. Weight: 0x000009cc
+N19. Value: 0x00069470. Weight: 0xffffbd03
+N19. Value: 0x00058ebd. Weight: 0x0000068d
+N19. Value: 0x00000000. Weight: 0xffffc378
 
 Final
 Neuron0:  0xfffdc571
