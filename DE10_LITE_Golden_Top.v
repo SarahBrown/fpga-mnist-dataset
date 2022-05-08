@@ -15,6 +15,7 @@ module DE10_LITE_Golden_Top(
 
 wire rst;
 wire valid;
+wire valid_layer2;
 wire [11:0] pixel_addr;
 wire [11:0] bias_load;
 wire [3:0] bias_addr;
@@ -47,17 +48,22 @@ wire signed [31:0] w2n8_value;
 wire signed [31:0] w2n9_value;
 
 wire signed [31:0] relu_value [0:9];
+wire signed [31:0] digit_output [0:9];
 wire signed [31:0] layer1_databus;
+wire signed [31:0] layer2_databus;
 
 assign rst = ~KEY[0] | ~KEY[1];
 assign layer1_databus = (|bias_load) ? bias1_value : pixel_value;
+assign layer2_databus = (|bias_load) ? bias2_value : relu_value[neuron1_addr];
 
 controller 		ctrl(	.clk(MAX10_CLK1_50),
 							.rst(rst),
 							.valid_pixel(valid),
+							.valid_digit(valid_layer2),
 							.pixel_addr(pixel_addr),
 							.bias_addr(bias_addr),
-							.bias_load(bias_load));
+							.bias_load(bias_load),
+							.layer1_addr(neuron1_addr));
 
 test_mem			t0(.clk(MAX10_CLK1_50),
 						.addr(pixel_addr),
@@ -84,7 +90,7 @@ neuron_layer1 	n1(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[2]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n1_value),
 							.relu_output(relu_value[1]));	
 							
 neuron_layer1 	n2(	.clk(MAX10_CLK1_50),
@@ -92,7 +98,7 @@ neuron_layer1 	n2(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[3]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n2_value),
 							.relu_output(relu_value[2]));	
 							
 neuron_layer1 	n3(	.clk(MAX10_CLK1_50),
@@ -100,7 +106,7 @@ neuron_layer1 	n3(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[4]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n3_value),
 							.relu_output(relu_value[3]));
 							
 neuron_layer1 	n4(	.clk(MAX10_CLK1_50),
@@ -108,7 +114,7 @@ neuron_layer1 	n4(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[5]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n4_value),
 							.relu_output(relu_value[4]));			
 
 neuron_layer1 	n5(	.clk(MAX10_CLK1_50),
@@ -116,7 +122,7 @@ neuron_layer1 	n5(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[6]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n5_value),
 							.relu_output(relu_value[5]));			
 
 neuron_layer1 	n6(	.clk(MAX10_CLK1_50),
@@ -124,7 +130,7 @@ neuron_layer1 	n6(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[7]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n6_value),
 							.relu_output(relu_value[6]));	
 
 neuron_layer1 	n7(	.clk(MAX10_CLK1_50),
@@ -132,7 +138,7 @@ neuron_layer1 	n7(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[8]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n7_value),
 							.relu_output(relu_value[7]));	
 
 neuron_layer1 	n8(	.clk(MAX10_CLK1_50),
@@ -140,7 +146,7 @@ neuron_layer1 	n8(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[9]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
+							.weight(w1n8_value),
 							.relu_output(relu_value[8]));	
 
 neuron_layer1 	n9(	.clk(MAX10_CLK1_50),
@@ -148,8 +154,88 @@ neuron_layer1 	n9(	.clk(MAX10_CLK1_50),
 							.valid(valid),
 							.bias_load(bias_load[10]),
 							.value(layer1_databus),
-							.weight(w1n0_value),
-							.relu_output(relu_value[9]));												
+							.weight(w1n9_value),
+							.relu_output(relu_value[9]));	
+
+neuron_layer2 	n10(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[1]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[0]));
+
+neuron_layer2 	n11(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[2]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[1]));	
+
+neuron_layer2 	n12(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[3]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[2]));	
+
+neuron_layer2 	n13(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[4]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[3]));	
+							
+neuron_layer2 	n14(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[5]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[4]));	
+							
+neuron_layer2 	n15(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[6]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[5]));	
+							
+neuron_layer2 	n16(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[7]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[6]));	
+							
+neuron_layer2 	n17(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[8]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[7]));	
+							
+neuron_layer2 	n18(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[9]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[8]));	
+							
+neuron_layer2 	n19(	.clk(MAX10_CLK1_50),
+							.rst(rst),
+							.valid(valid_layer2),
+							.bias_load(bias_load[10]),
+							.value(layer2_databus),
+							.weight(w2n0_value),
+							.digit_output(digit_output[9]));								
 						
 layer1_neuron0 w1n0(	.clk(MAX10_CLK1_50),
 							.addr(pixel_addr),

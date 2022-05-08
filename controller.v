@@ -2,20 +2,27 @@ module controller (
 	input clk,
 	input rst,
 	output valid_pixel,
+	output valid_digit,
 	output reg [11:0] pixel_addr,
 	output reg [3:0] bias_addr,
-	output reg [11:0] bias_load
+	output reg [11:0] bias_load,
+	output reg [3:0] layer1_addr
 );
 
 reg [3:0] state;
 reg [1:0] valid;
+reg [1:0] valid_layer2;
+reg [2:0] delay;
 
 always @(posedge clk or posedge rst) begin
 	if (rst) begin
 		state <= 4'b0;
 		valid <= 2'b0;
+		valid_layer2 <= 2'b0;
+		delay <= 3'b0;
 		pixel_addr <= 12'b0;
 		bias_addr <= 4'b0;
+		layer1_addr <= 4'b0;
 		bias_load <= 12'b1;
 	end
 	
@@ -43,7 +50,31 @@ always @(posedge clk or posedge rst) begin
 				else begin
 					state <= 4'd2;
 					valid <= 2'b0;
+					delay <= 3'b0;
 				end
+			end
+			
+			2: begin
+				if (delay < 3'd7) begin
+					delay <= delay + 1'b1;
+				end
+				
+				else begin
+					state <= 4'd3;
+					valid_layer2 <= 2'b01;
+				end
+			end
+			
+			3: begin
+					if (layer1_addr < 4'd10) begin
+						layer1_addr <= layer1_addr + 1'b1;
+						valid_layer2[1:0] <= {valid_layer2[0],1'b1} ;
+					end
+					
+					else begin
+						state <= 4'd4;
+						valid_layer2 <= 2'b0;
+					end
 			end
 			
 			
@@ -52,5 +83,6 @@ always @(posedge clk or posedge rst) begin
 end
 
 assign valid_pixel = valid[1];
+assign valid_digit = valid_layer2[1];
 
 endmodule
