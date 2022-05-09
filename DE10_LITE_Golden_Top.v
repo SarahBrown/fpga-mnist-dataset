@@ -1,19 +1,24 @@
 module DE10_LITE_Golden_Top(
 	input 		          		MAX10_CLK1_50,
-	// output		     [7:0]		HEX0,
-	// output		     [7:0]		HEX1,
-	// output		     [7:0]		HEX2,
-	// output		     [7:0]		HEX3,
-	// output		     [7:0]		HEX4,
-	// output		     [7:0]		HEX5,
-	input 		     [1:0]		KEY,
-	output		     [9:0]		LEDR
-	// input 		     [9:0]		SW
+	output		     [7:0]		HEX0,
+	//output		     [7:0]		HEX1,
+	//output		     [7:0]		HEX2,
+	//output		     [7:0]		HEX3,
+	//output		     [7:0]		HEX4,
+	//output		     [7:0]		HEX5,
+	input 		     [1:0]		KEY
+	//output		     [9:0]		LEDR
+	//input 		     [9:0]		SW
 );
 
 // REG/Wires
 
-reg [3:0] max;
+reg [3:0] max_index;
+reg signed [31:0] max_value;
+
+reg [3:0] next_index;
+reg signed [31:0] next_max;
+integer i;
 
 wire rst;
 wire valid;
@@ -59,6 +64,34 @@ wire signed [31:0] layer2_databus;
 assign rst = ~KEY[0] | ~KEY[1];
 assign layer1_databus = (|bias_load) ? bias1_value : pixel_value;
 assign layer2_databus = (|bias_load) ? bias2_value : relu_value[neuron1_addr_delay];
+
+always@(posedge MAX10_CLK1_50) begin
+	if (rst) begin
+		max_value <= 31'b0;
+		max_index <= 4'b0;
+	end
+  
+	else begin
+		max_value <= next_max;
+		max_index <= next_index;
+	end	
+end
+
+always @(*) begin
+	next_max = digit_output[0];
+	next_index = 4'b0;
+	
+	for (i = 1; i <= 9; i=i+1) begin // <-- start at 1, not 0 (0 is same a default)
+		if (digit_output[i] > next_max) begin
+			next_max  = digit_output[i];
+			next_index = i;
+		end
+	end 
+end   
+
+
+sevenSeg 		hex0(	.sel(max_index), 
+							.segs(HEX0));
 
 controller 		ctrl(	.clk(MAX10_CLK1_50),
 							.rst(rst),

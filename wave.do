@@ -12,6 +12,8 @@ add wave -noupdate -label {test mem} -radix hexadecimal -radixshowbase 0 /top_tb
 add wave -noupdate -divider {neuron ctrl}
 add wave -noupdate -label valid -radix hexadecimal /top_tb/topTest/n0/valid
 add wave -noupdate -label {clk offset valid} -radix hexadecimal /top_tb/topTest/n0/valid2
+add wave -noupdate -label {valid layer 2} /top_tb/topTest/valid_layer2
+add wave -noupdate -label {clk offset valid} /top_tb/topTest/n10/valid2
 add wave -noupdate -divider n0
 add wave -noupdate -label {n0 prod} -radix hexadecimal /top_tb/topTest/n0/prod
 add wave -noupdate -label {n0 value} -radix hexadecimal /top_tb/topTest/n0/value
@@ -37,6 +39,10 @@ add wave -noupdate -divider n10
 add wave -noupdate -label {n10 value} -radix hexadecimal /top_tb/topTest/n10/value
 add wave -noupdate -label {n10 weight} -radix hexadecimal /top_tb/topTest/n10/weight
 add wave -noupdate -label {n10 sum} -radix hexadecimal /top_tb/topTest/n10/sum
+add wave -noupdate -divider n11
+add wave -noupdate -label {n11 value} -radix hexadecimal /top_tb/topTest/n11/value
+add wave -noupdate -label {n11 weight} -radix hexadecimal /top_tb/topTest/n11/weight
+add wave -noupdate -label {n11 sum} -radix hexadecimal /top_tb/topTest/n11/sum
 add wave -noupdate -divider {digit output}
 add wave -noupdate -label d0 -radix hexadecimal {/top_tb/topTest/digit_output[0]}
 add wave -noupdate -label d1 -radix hexadecimal {/top_tb/topTest/digit_output[1]}
@@ -48,11 +54,12 @@ add wave -noupdate -label d6 -radix hexadecimal {/top_tb/topTest/digit_output[6]
 add wave -noupdate -label d7 -radix hexadecimal {/top_tb/topTest/digit_output[7]}
 add wave -noupdate -label d8 -radix hexadecimal {/top_tb/topTest/digit_output[8]}
 add wave -noupdate -label d9 -radix hexadecimal {/top_tb/topTest/digit_output[9]}
+add wave -noupdate -label max -radix decimal -radixshowbase 0 /top_tb/topTest/max_index
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {8161875 ps} 0}
+WaveRestoreCursors {{Cursor 1} {8184256 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 178
-configure wave -valuecolwidth 120
+configure wave -valuecolwidth 40
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
 configure wave -snapdistance 10
@@ -65,4 +72,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {8033932 ps} {8193343 ps}
+WaveRestoreZoom {8043656 ps} {8193172 ps}
