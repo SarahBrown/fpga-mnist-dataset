@@ -65,6 +65,8 @@ assign rst = ~KEY[0] | ~KEY[1];
 assign layer1_databus = (|bias_load) ? bias1_value : pixel_value;
 assign layer2_databus = (|bias_load) ? bias2_value : relu_value[neuron1_addr_delay];
 
+
+// for loop https://stackoverflow.com/questions/70092678/find-maximum-number-present-in-verilog-array
 always@(posedge MAX10_CLK1_50) begin
 	if (rst) begin
 		max_value <= 31'b0;
